@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio</title>
+    <link rel="icon" href="../TUGAS.KEL/galeri/iakn.png" type="image/png">
+    <!-- ini linknya diambil dari github, biar bisa pakai icon-iconnya yang keren dan fontnya yang bagus -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet"/>
+    <!-- dan fontnya yang diambil dari google fonts, biar tampilannya lebih menarik dan profesional -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ini buat atur fontnya, biar lebih bagus tampilannya */
+        * {
+            margin: 0; /*ini buat menghilangkan jarak default di semua elemen, biar lebih rapi */
+            padding: 0; /*ini buat menghilangkan padding default di semua elemen, biar lebih rapi */
+            box-sizing: border-box; /*ini buat memastikan padding dan border dihitung dalam ukuran total elemen, biar lebih mudah diatur*/
+            font-family: 'Poppins', sans-serif; /*ini buat menggunakan font Poppins dari Google Fonts, biar tampilannya lebih modern dan profesional */
+        }
+       
+        /* ini buat backgroundnya */
+        body {
+            min-height: 100vh; /*ini buat memastikan tinggi body minimal 100% dari viewport, biar backgroundnya selalu memenuhi layar */
+            background-color: #1a1a2e; /*ini buat memberikan warna gelap pada background, biar lebih elegan dan nyaman di mata */
+            background: #16213e; /*ini buat memberikan warna gelap pada background, biar lebih elegan dan nyaman di mata */
+        }
+       
+        /* ini buat atur lebar kontennya, biar gak terlalu lebar dan lebih rapi */ 
+        .container {
+            max-width: 1200px; /*ini buat membatasi lebar konten maksimal 1200px, biar gak terlalu lebar di layar besar */
+            margin: 0 auto; /*ini buat membuat konten berada di tengah secara horizontal, biar lebih seimbang */
+            padding: 0 40px; /*ini buat memberikan padding kiri dan kanan sebesar 40px, biar kontennya gak terlalu mepet dengan tepi layar */
+        }
+        
+        /* ini buat atur logonya, biar lebih besar, tebal, dan warnanya merah muda yang mencolok  */
+        .logo {
+             font-size: 30px; /*ini buat atur ukuran font logo, biar lebih besar dan mencolok */
+            font-weight: 700; /*ini buat atur ketebalan font logo, biar lebih tebal dan kuat */
+            color: #e94560; /*ini buat atur warna logo, biar merah muda yang mencolok dan menarik perhatian */
+            text-decoration: none; /*ini buat menghilangkan garis bawah pada logo, biar tampilannya lebih bersih dan profesional */
+        }
+
+        /* ini buat atur section home tulisan kel 3, biar isinya sejajar secara horizontal, ada jarak 50px di antara mereka, paddingnya 50px atas, 5% kiri dan kanan, dan warnanya putih  */
+        .home {
+            display: flex; /*ini buat membuat section home menjadi flex container, biar isinya bisa diatur sejajar secara horizontal*/
+            align-items: center; /*ini buat membuat isi section home berada di tengah secara vertikal, biar lebih seimbang */
+            height: 100%; /*ini buat membuat section home memiliki tinggi 100% dari kontainer, biar memenuhi layar */
+            gap: 50px; /*ini buat memberikan jarak 50px di antara isi section home, biar gak terlalu mepet dan lebih rapi */
+            padding: 50px 5% 0; /*ini buat memberikan padding atas sebesar 50px, dan padding kiri dan kanan sebesar 5%, biar kontennya gak terlalu mepet dengan tepi layar */
+            color: #fff; /*ini buat memberikan warna putih pada teks di section home, biar kontras dengan background gelap dan lebih mudah dibaca */
+        }
+
+        /* untuk memperbesar tulisan kelompok 3 */
+        .home-detail h1 {
+            font-size: 55px; /*ini buat atur ukuran font tulisan kelompok 3, biar lebih besar dan mencolok */
+            line-height: 1; /*ini buat mengatur jarak antar baris pada tulisan kelompok 3, biar lebih rapat dan fokus pada kata-katanya */
+        }
+
+        /* untuk memperbesar tulisan programer */
+        .home-detail h2 {
+            font-size: 32px; /*ini buat atur ukuran font tulisan programer, biar lebih besar dan menonjol sebagai subjudul */
+        }
+
+        /* untuk mengatur home detail supaya ada jarak */
+        .home-detail p {
+            margin: 10px 0 20px; /*ini buat memberikan margin atas sebesar 10px, margin bawah sebesar 20px, dan margin kiri dan kanan sebesar 0 pada paragraf di home detail, biar ada jarak yang cukup antara teks dan elemen lainnya */
+        }
+
+        /* mengatur tombol sosial media supaya sejajar */
+        .home-detail .download-social {
+            display: flex; /*ini buat membuat elemen dengan class download-social menjadi flex container, biar isinya bisa diatur sejajar secara horizontal */
+            align-items: center; /*ini buat membuat isi elemen dengan class download-social berada di tengah secara vertikal, biar lebih seimbang */
+        }
+
+        /* ini buat atur tombol download cv, biar tampilannya seperti tombol dengan padding, background merah muda yang mencolok, border radius yang bulat, warna putih, tanpa garis bawah, dan tebalnya 500  */
+        .btn {
+            display: inline-block; /*ini buat membuat elemen dengan class btn menjadi inline-block, biar bisa memiliki padding dan ukuran seperti tombol */
+            padding: 10px 30px; /*ini buat memberikan padding atas dan bawah sebesar 10px, dan padding kiri dan kanan sebesar 30px pada tombol download cv, biar tampilannya lebih besar dan nyaman untuk diklik */
+            background: #e94560; /*ini buat memberikan warna merah muda yang mencolok pada tombol download cv, biar menarik perhatian dan sesuai dengan tema warna keseluruhan */
+            border-radius: 40px; /*ini buat memberikan border radius yang bulat pada tombol download cv, biar tampilannya lebih lembut dan modern */
+            border: 2px solid #fff; /*ini buat memberikan border putih pada tombol download cv, biar lebih menonjol dan kontras dengan background merah muda */
+            color: white;/*ini buat memberikan warna putih pada teks tombol download cv, biar kontras dengan background merah muda dan lebih mudah dibaca */
+            text-decoration: none;/*ini buat menghilangkan garis bawah pada teks tombol download cv, biar tampilannya lebih bersih dan profesional */
+            font-weight: 500;/*ini buat memberikan ketebalan 500 pada teks tombol download cv, biar tampilannya lebih tebal dan kuat */
+            transition: .5s;/*ini buat memberikan efek transisi selama 0.5 detik pada tombol download cv, biar saat di hover tampilannya berubah dengan halus */
+        }
+
+        /* ini buat atur tombol download cv saat hover, biar backgroundnya transparan, gak ada bayangan, dan warnanya putih  */
+        .btn:hover {
+            background: transparent;/*ini buat membuat background tombol download cv menjadi transparan saat hover, biar terlihat lebih elegan dan sesuai dengan tema warna keseluruhan */
+            box-shadow: none;/*ini buat menghilangkan efek bayangan pada tombol download cv saat hover, biar tampilannya lebih sederhana dan fokus pada teksnya */
+            color: #fff;/*ini buat memberikan warna putih pada teks tombol download cv saat hover, biar tetap kontras dengan background transparan dan lebih mudah dibaca */
+        }
+
+        /* ini buat atur ikon sosial media, biar tampilannya sejajar dengan jarak 20px di antara mereka dan ada margin kiri 20px  */
+        .home-detail .social-icons {
+            margin-left: 20px;/*ini buat memberikan margin kiri sebesar 20px pada elemen dengan class social-icons, biar ada jarak antara tombol download cv dan ikon sosial media */
+        }
+
+        /* ini buat atur ikon sosial media, biar tampilannya seperti tombol dengan padding, border putih, border radius yang bulat, ukuran font 20px, warna putih, tanpa garis bawah, dan margin 0 8px  */
+        .home-detail .social-icons a {
+            display: inline-flex;/*ini buat membuat elemen a di dalam class social-icons menjadi inline-flex, biar bisa memiliki padding dan ukuran seperti tombol */
+            padding: 8px;/*ini buat memberikan padding sebesar 8px pada ikon sosial media, biar tampilannya lebih besar dan nyaman untuk diklik */
+            border: 2px solid #fff;/*ini buat memberikan border putih pada ikon sosial media, biar lebih menonjol dan kontras dengan background gelap */
+            border-radius: 50%;/*ini buat memberikan border radius yang bulat pada ikon sosial media, biar tampilannya lebih lembut dan modern */
+            font-size: 20px;/*ini buat memberikan ukuran font sebesar 20px pada ikon sosial media, biar lebih besar dan mudah dikenali */
+            color: #fff;/*ini buat memberikan warna putih pada ikon sosial media, biar kontras dengan background gelap dan lebih mudah dikenali */
+            text-decoration: none;/*ini buat menghilangkan garis bawah pada ikon sosial media, biar tampilannya lebih bersih dan profesional */
+            margin: 0 8px;/*ini buat memberikan margin sebesar 0 pada atas dan bawah, dan 8px pada kiri dan kanan pada ikon sosial media, biar ada jarak yang cukup antara ikon satu dengan yang lainnya */
+        }
+
+        /* ini buat efek hover ikon sosial, biar backgroundnya merah muda dan ada efek cahaya */
+        .home-detail .social-icons a:hover {
+            background: #e94560;/*ini buat memberikan warna merah muda pada background ikon sosial media saat hover, biar lebih mencolok dan sesuai dengan tema warna keseluruhan */
+            box-shadow: 0 0 10px #e94560;/*ini buat memberikan efek cahaya merah muda pada ikon sosial media saat hover, biar tampilannya lebih menarik dan dinamis */
+            color: #fff;/*ini buat memberikan warna putih pada ikon sosial media saat hover, biar tetap kontras dengan background merah muda dan lebih mudah dikenali */
+        }
+
+        /* ini buat atur kotak foto di bagian home, biar ada ukuran, border bulat, dan efek cahaya */
+        .home-image {
+            flex: 1;/*ini buat membuat elemen dengan class home-image mengambil sisa ruang yang tersedia di section home, biar foto bisa lebih besar dan proporsional dengan teksnya */
+            display: flex;/*ini buat membuat elemen dengan class home-image menjadi flex container, biar bisa diatur sejajar secara horizontal */
+            justify-content: center;/*ini buat membuat isi elemen dengan class home-image berada di tengah secara horizontal, biar lebih seimbang */
+            align-items: center;/*ini buat membuat isi elemen dengan class home-image berada di tengah secara vertikal, biar lebih seimbang */
+        }
+
+        /* ini buat atur kotak foto, biar berbentuk lingkaran dan ada border merah muda */
+        .img-box {
+            width: 320px;/*ini buat memberikan lebar sebesar 320px pada kotak foto, biar ukurannya cukup besar untuk menampilkan gambar dengan jelas */
+            height: 320px;/*ini buat memberikan tinggi sebesar 320px pada kotak foto, biar ukurannya proporsional dengan lebarnya dan berbentuk lingkaran */
+            border-radius: 50%;/*ini buat memberikan border radius sebesar 50% pada kotak foto, biar tampilannya menjadi lingkaran sempurna */
+            overflow: hidden;
+            background: #16213e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* ini buat gambar di dalam img-box, biar memenuhi kotaknya */
+        .img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ini buat placeholder ikon jika foto belum ada */
+        .img-box i {
+            font-size: 120px;
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* ==================== SECTION TITLE ==================== */
+
+        /* ini buat atur judul di setiap section, biar terpusat dan ada jarak bawah */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #fff;
+        }
+
+        /* ini buat atur teks judul section, garis bawah dihapus sesuai permintaan */
+        .section-title h2 {
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        /* ==================== ABOUT SECTION ==================== */
+
+        /* ini buat atur section about, biar ada padding atas bawah yang cukup */
+        .about {
+            padding: 230px 5%;
+            color: #fff;
+            background: #16213e;
+            clear: both;
+            position: relative;
+            display: block;
+        }
+       
+        /* ini buat atur isi about, biar teks dan gambar sejajar */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        /* ini buat atur kotak foto di about, biar berukuran pas */
+        .about-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: #16213e;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* ini buat gambar di about, biar memenuhi kotaknya */
+        .about-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ini buat placeholder ikon jika foto belum ada di about */
+        .about-img i {
+            font-size: 100px;
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* ini buat atur teks di about, biar mengambil sisa ruang */
+        .about-text {
+            flex: 1;
+        }
+
+        /* ini buat atur judul di about */
+        .about-text h3 {
+            font-size: 26px;
+            margin-bottom: 12px;
+            color: #e94560;
+        }
+
+        /* ini buat atur paragraf di about, biar ada jarak bawah dan warnanya abu-abu */
+        .about-text p {
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        /* ini buat atur info detail seperti nama, umur, dll di about */
+        .about-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        /* ini buat atur setiap item info, biar ada warna dan padding */
+        .about-info span {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+        }
+
+        /* ini buat atur label info seperti "Nama:", biar warnanya putih dan tebal */
+        .about-info b {
+            color: #fff;
+        }
+
+        /* ==================== PORTOFOLIO SECTION ==================== */
+
+        /* ini buat atur section portofolio, biar ada padding yang cukup dan background sedikit berbeda */
+        .portofolio {
+            padding: 80px 5%;
+            background: #16213e;
+        }
+
+        /* ini buat atur grid kartu portofolio, biar otomatis menyesuaikan lebar layar */
+        .porto-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        /* ini buat atur setiap kartu portofolio, biar ada background, border radius, dan efek hover */
+        .porto-card {
+            background: #1a1a2e;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(233, 69, 96, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* ini buat efek hover pada kartu portofolio, biar naik sedikit dan ada cahaya */
+        .porto-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
+        }
+
+        /* ini buat atur gambar placeholder di kartu portofolio */
+        .porto-card-img {
+            width: 100%;
+            height: 180px;
+            background: #0f3460;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* ini buat ikon placeholder di kartu portofolio */
+        .porto-card-img i {
+            font-size: 60px;
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* ini buat gambar asli di kartu portofolio */
+        .porto-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ini buat atur isi teks di bawah gambar kartu portofolio */
+        .porto-card-body {
+            padding: 20px;
+            color: #fff;
+        }
+
+        /* ini buat judul kartu portofolio */
+        .porto-card-body h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        /* ini buat deskripsi kartu portofolio */
+        .porto-card-body p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.65);
+            line-height: 1.6;
+            margin-bottom: 14px;
+        }
+
+        /* ini buat tag teknologi yang dipakai di kartu portofolio */
+        .porto-card-body .tag {
+            display: inline-block;
+            background: rgba(233, 69, 96, 0.2);
+            color: #e94560;
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 12px;
+            margin: 2px;
+        }
+
+        /* ==================== CONTACT SECTION ==================== */
+
+        /* ini buat atur section contact, biar ada padding yang cukup dan background sedikit berbeda */
+.contact {
+    padding: 80px 5%;
+    background: #16213e;
+    color: #fff;
+}
+
+/* ini buat atur isi contact, biar peta+info di kiri dan form di kanan sejajar */
+.contact-content {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+/* ini buat atur kolom kiri yang berisi peta dan info kontak */
+.contact-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* ini buat atur peta kampus di dalam kolom kiri */
+.map-wrapper h3 {
+    font-size: 20px;
+    color: #e94560;
+    margin-bottom: 16px;
+}
+
+/* ini buat atur iframe peta, biar lebarnya penuh dan ada border radius */
+.map-wrapper iframe {
+    width: 100%;
+    height: 250px;
+    border: 0;
+    border-radius: 12px;
+}
+
+/* ini buat atur bagian info kontak di sebelah kiri */
+.contact-info h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #e94560;
+}
+
+/* ini buat setiap baris info kontak seperti email, nomor hp, dll */
+.contact-info .info-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+/* ini buat ikon di info kontak */
+.contact-info .info-item i {
+    font-size: 22px;
+    color: #e94560;
+    width: 44px;
+    height: 44px;
+    border: 2px solid #e94560;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+/* ini buat teks kecil label di info kontak */
+.contact-info .info-item span {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* ini buat teks utama di info kontak */
+.contact-info .info-item p {
+    font-size: 15px;
+    color: #fff;
+}
+
+/* ini buat atur form kontak di sebelah kanan */
+.contact-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* ini buat atur input dan textarea di form kontak */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background: #1a1a2e;
+    border: 1px solid rgba(233, 69, 96, 0.4);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+/* ini buat efek fokus pada input dan textarea */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #e94560;
+}
+
+/* ini buat placeholder teks di input agar warnanya lebih lembut */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* ini buat textarea khusus, biar tingginya cukup untuk pesan panjang */
+.contact-form textarea {
+    height: 140px;
+    resize: vertical;
+}
+
+/* ini buat tombol kirim di form kontak */
+.contact-form .btn {
+    align-self: flex-start;
+    cursor: pointer;
+}
+
+        /* ==================== FOOTER ==================== */
+
+        /* ini buat atur footer, biar ada background gelap, teks putih, dan terpusat */
+        footer {
+            background: #0f0f1a;
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            padding: 24px 40px;
+            font-size: 14px;
+            border-top: 1px solid rgba(233, 69, 96, 0.2);
+        }
+
+        /* ini buat warna merah muda pada nama di footer */
+        footer span {
+            color: #e94560;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <a href="#" class="logo">Kelompok 3</a>
+        </header>
+
+        <!-- ==================== HOME SECTION ==================== -->
+        <section class="home">
+            <div class="home-detail">
+                <h1>Hallo Semua, Saya Kelompok 3</h1>
+                <h2>Kelas B</h2>
+                <p>Kelompok 3 IAKN Ambon hadir dengan portofolio. Dari kampus di negeri Hallong, kami bawa semangat inovasi berbasis iman dan ilmu. Jelajahi karya kami dan rasakan kolaborasi terbaik dari Maluku!"</p>
+                <div class="download-social">
+                    <a href="../TUGAS.KEL/cv/cv-kelompok-3.pdf" class="btn"download="cv-kelompok-3.pdf">Download CV</a>
+                    <div class="social-icons">
+                        <a href="https://wa.me/082197883767"target="_blank" rel="noopener noreferrer"><i class="ri-whatsapp-line"></i></a>
+                        <a href="https://www.instagram.com/sherly_skly?igsh=d2h2NXdkYXFuNDZi"target="_blank" rel="noopener noreferrer"><i class="ri-instagram-line"></i></a>
+                        <a href="https://www.facebook.com/jaswel.picanussa.7"target="_blank" rel="noopener noreferrer"><i class="ri-facebook-fill"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="home-image">
+                <div class="img-box">
+                    <img src="../TUGAS.KEL/galeri/iakn.png" alt="">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ==================== ABOUT SECTION ==================== -->
+    <section class="about">
+        <div class="section-title">
+            <h2>About Me</h2>
+        </div>
+        <div class="about-content">
+            <div class="about-img">
+                <img src="../TUGAS.KEL/galeri/jaswel.jpeg" alt="">
+            </div>
+            <div class="about-text">
+                <h3>ANGGOTA 1</h3>
+                <p>"Spesialis website modern yang mengikuti standar industri terkini. Menguasai React.js untuk frontend dinamis, Tailwind CSS untuk styling responsif, Node.js/Express untuk backend robust, dan MySQL/MongoDB untuk data management. Portofolio kami termasuk website corporate IAKN Ambon (2K+ visitors/bulan) dan e-commerce lokal dengan konversi 15%. Fokus pada speed, security, dan SEO ranking #1."</p>
+                <div class="about-info">
+                    <p><span>Nama : </span><b>Nataniel picanussa</b></p>
+                    <p><span>Kelas : </span><b>B</b></p>
+                    <p><span>Kampus : </span><b>IAKN</b></p>
+                    <p><span>Bidang : </span><b>Web Developer</b></p>
+                </div>
+                <a href="../TUGAS.KEL/cv/cv-kelompok-3.pdf" class="btn"download="cv-kelompok-3.pdf">Download CV</a>
+            </div>
+        </div>
+         <div class="about-content">
+            <div class="about-img">
+                <img src="../TUGAS.KEL/galeri/tasya.jpeg" alt="">
+            </div>
+            <div class="about-text">
+                <h3>ANGGOTA 2</h3>
+                <p>"Ahli menggali nilai dari data besar untuk pengambilan keputusan strategis. Mahir dalam Python (Pandas, NumPy), visualisasi Power BI/Tableau, dan SQL advanced querying. Pengalaman menganalisis 50K+ dataset penjualan Maluku, menghasilkan rekomendasi yang meningkatkan revenue 28%. Dari data cleaning hingga predictive analytics, kami berikan insight yang actionable dan visualisasi dashboard real-time."</p>
+                <div class="about-info">
+                    <p><span>Nama : </span><b>Anastasya Banebunga</b></p>
+                    <p><span>Kelas : </span><b>B</b></p>
+                    <p><span>Kampus : </span><b>IAKN</b></p>
+                    <p><span>Bidang : </span><b>Data Analyst</b></p>
+                </div>
+                <a href="../TUGAS.KEL/cv/cv-kelompok-3.pdf" class="btn"download="cv-kelompok-3.pdf">Download CV</a>
+            </div>
+        </div> <div class="about-content">
+            <div class="about-img">
+                <img src="../TUGAS.KEL/galeri/versy.jpeg" alt="">
+            </div>
+            <div class="about-text">
+                <h3>ANGGOTA 3</h3>
+               <p>"Spesialis website modern yang mengikuti standar industri terkini. Menguasai React.js untuk frontend dinamis, Tailwind CSS untuk styling responsif, Node.js/Express untuk backend robust, dan MySQL/MongoDB untuk data management. Portofolio kami termasuk website corporate IAKSN Ambon (2K+ visitors/bulan) dan e-commerce lokal dengan konversi 15%. Fokus pada speed, security, dan SEO ranking #1."</p>
+                <div class="about-info">
+                    <p><span>Nama : </span><b>Versy tehusalawany</b></p>
+                    <p><span>Kelas : </span><b>B</b></p>
+                    <p><span>Kampus : </span><b>IAKN</b></p>
+                    <p><span>Bidang : </span><b>Web Developer</b></p>
+                </div>
+                <a href="../TUGAS.KEL/cv/cv-kelompok-3.pdf" class="btn"download="cv-kelompok-3.pdf">Download CV</a>
+            </div>
+        </div> <div class="about-content">
+            <div class="about-img">
+                <img src="../TUGAS.KEL/galeri/sherly.jpeg" alt="">
+            </div>
+            <div class="about-text">
+                <h3>ANGGOTA 4</h3>
+               <P>"Fokus pada Business Intelligence untuk transformasi data menjadi keunggulan kompetitif. Expert di Excel Advanced, Google Data Studio, dan ETL processes. Proyek unggulan: Dashboard monitoring siswa IAKN (accuracy 98%) dan analisis tren wisata Maluku (ROI +35%). Mengubah angka-angka menjadi cerita bisnis yang jelas dengan KPI tracking dan forecasting akurat."</P>
+                <div class="about-info">
+                    <p><span>Nama : </span><b>Sherlyna Saukoly</b></p>
+                    <p><span>Kelas : </span><b>B</b></p>
+                    <p><span>Kampus : </span><b>IAKN</b></p>
+                    <p><span>Bidang : </span><b> Data Analyst (Business Intelligence)</b></p>
+                </div>
+                <a href="../TUGAS.KEL/cv/cv-kelompok-3.pdf" class="btn"download="cv-kelompok-3.pdf">Download CV</a>
+            </div>
+            </div> <div class="about-content">
+            <div class="about-img">
+                <img src="../TUGAS.KEL/galeri/grasela.jpeg" alt="">
+            </div>
+            <div class="about-text">
+                <h3>ANGGOTA 5</h3>
+                <P>"Pelopor analisis prediktif dengan sentuhan AI di Maluku. Menguasai Machine Learning basic (Scikit-learn), Neural Networks, dan Big Data processing. Pengalaman membangun model prediksi churn customer (accuracy 85%) dan sentiment analysis media sosial IAKN Ambon. Dari data preprocessing hingga model deployment, kami bawa masa depan analitik ke proyek Anda."</P>
+                <div class="about-info">
+                    <p><span>Nama : </span><b>Grasella Dias</b></p>
+                    <p><span>Kelas : </span><b>B</b></p>
+                    <p><span>Kampus : </span><b>IAKN</b></p>
+                    <p><span>Bidang : </span><b> Data Analyst (Machine Learning)</b></p>
+                </div>
+                <a href="../TUGAS.KEL/cv/cv-kelompok-3.pdf" class="btn"download="cv-kelompok-3.pdf">Download CV</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PORTOFOLIO SECTION ==================== -->
+    <section class="portofolio">
+        <div class="section-title">
+            <h2>Portofolio</h2>
+        </div>
+        <div class="porto-grid">
+            <!-- Kartu Portofolio 1 -->
+            <div class="porto-card">
+                <div class="porto-card-img">
+                    <i class="ri-global-line"></i>
+                </div>
+                <div class="porto-card-body">
+                    <h3>Website Toko Online</h3>
+                    <p>Website e-commerce sederhana dengan fitur keranjang belanja dan halaman produk.</p>
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JavaScript</span>
+                </div>
+            </div>
+            <!-- Kartu Portofolio 2 -->
+            <div class="porto-card">
+                <div class="porto-card-img">
+                    <i class="ri-smartphone-line"></i>
+                </div>
+                <div class="porto-card-body">
+                    <h3>Aplikasi Mobile</h3>
+                    <p>Aplikasi sederhana untuk mencatat kegiatan harian dengan tampilan yang modern.</p>
+                    <span class="tag">Html</span>
+                    <span class="tag">Css</span>
+                </div>
+            </div>
+            <!-- Kartu Portofolio 3 -->
+            <div class="porto-card">
+                <div class="porto-card-img">
+                    <i class="ri-database-2-line"></i>
+                </div>
+                <div class="porto-card-body">
+                    <h3>Sistem Informasi</h3>
+                    <p>Sistem manajemen data sekolah berbasis web dengan fitur CRUD lengkap.</p>
+                    <span class="tag">PHP</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">Bootstrap</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- ==================== CONTACT SECTION ==================== -->
+<section class="contact">
+    <div class="section-title">
+        <h2>Contact</h2>
+    </div>
+
+    <div class="contact-content">
+
+        <!-- Kolom kiri: peta di atas, info kontak di bawah -->
+        <div class="contact-left">
+
+            <!-- ini buat menampilkan peta lokasi kampus -->
+            <div class="map-wrapper">
+                <h3>Lokasi Kampus</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d296.8660630080955!2d128.16083043523815!3d-3.7146281360776174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sid!2sid!4v1774167047732!5m2!1sid!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <!-- ini buat info kontak di bawah peta -->
+            <div class="contact-info">
+                <h3>Hubungi Kami</h3>
+                <div class="info-item">
+                    <i class="ri-map-pin-line"></i>
+                    <div>
+                        <span>Alamat</span>
+                        <p>Jl.dolog,ambon</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="ri-mail-line"></i>
+                    <div>
+                        <span>Email</span>
+                        <p>kelompok3@gmail.com</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="ri-phone-line"></i>
+                    <div>
+                        <span>Nomor HP</span>
+                        <p>+62 821-9788-3767</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="ri-instagram-line"></i>
+                    <div>
+                        <span>Instagram</span>
+                        <p>@kelompok3_official</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kolom kanan: form kontak -->
+        <div class="contact-form">
+            <form action="" method="post"onsubmit="alert('Pesan Anda Telah Terkirim')">
+                        <table width="100%">
+                            <tr>
+                                <td><input type="text" name="nama" placeholder="Nama Lengkap" required></td>
+                            </tr>
+                            <tr>
+                                <td><input type="email" name="email" placeholder="Alamat Email" required></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="subjek" placeholder="Subjek" required></td>
+                            </tr>
+                            <tr>
+                                <td><textarea name="pesan" placeholder="Tulis pesan kamu di sini..." required></textarea></td>
+                            </tr>
+                        </table>
+
+            <button type="submit" class="btn">Kirim Pesan</button>
+        </div>
+
+    </div>
+</section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <p>© 2025 <span>Kelompok 3</span>. All Rights Reserved. Dibuat dengan <span>Sepenuh hati</span> oleh Kelompok 3</p>
+    </footer>
+
+</body>
+</html>
